@@ -1,37 +1,22 @@
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include <math.h>
-#include <cmath>
-#include <cstring> 
 #include "heapsort/heapsort.h"
 
 int main(){
-	int *a1 = new int[200000];
-	memset(a1,0,sizeof(int)*200001);
-	int *t1 = new int[200000];
-	memset(t1,0,sizeof(int)*200001);
-	int *c1 = new int[200000];
-	memset(c1,0,sizeof(int)*200001);
-	int *g1 = new int[200000];
-	memset(g1,0,sizeof(int)*200001);
-	int *q1 = new int[200000];
-	memset(q1,0,sizeof(int)*200001);
-	int *a2 = new int[200000];
-	memset(a2,0,sizeof(int)*200001);
-	int *t2 = new int[200000];
-	memset(t2,0,sizeof(int)*200001);
-	int *c2 = new int[200000];
-	memset(c2,0,sizeof(int)*200001);
-	int *g2 = new int[200000];
-	memset(g2,0,sizeof(int)*200001);
-	int *q2 = new int[200000];
-	memset(q2,0,sizeof(int)*200001);
-	char *bs = new char[200000];
-	memset(bs,0,sizeof(char)*200001);
-	char *bs2 = new char[200000];
-	memset(bs2,0,sizeof(char)*200001);
+	int *a1 = (int*)malloc(sizeof(int)*200001);
+	int *t1 = (int*)malloc(sizeof(int)*200001);
+	int *c1 = (int*)malloc(sizeof(int)*200001);
+	int *g1 = (int*)malloc(sizeof(int)*200001);
+	int *a2 = (int*)malloc(sizeof(int)*200001);
+	int *t2 = (int*)malloc(sizeof(int)*200001);
+	int *c2 = (int*)malloc(sizeof(int)*200001);
+	int *g2 = (int*)malloc(sizeof(int)*200001);
+	int *q1 = (int*)malloc(sizeof(int)*200001);
+	int *q2 = (int*)malloc(sizeof(int)*200001);
+	char *bs = (char*)malloc(sizeof(char)*200001);
+	char *bs2 = (char*)malloc(sizeof(char)*200001);
 	FILE *tp1;
 	tp1 = fopen("type1","r");
 	FILE *tp2;
@@ -50,10 +35,10 @@ int main(){
 	memset(b,0,sizeof(b));
 	memset(list1,0,sizeof(list1));
 	memset(list2,0,sizeof(list2));
-	int *score = new int[199860];
-	int *place = new int[199860];
-	int *conti = new int[199860];
-	int *contii = new int[199860];
+	int *score = (int*)malloc(sizeof(int)*199860);
+	int *place = (int*)malloc(sizeof(int)*199860);
+	int *conti = (int*)malloc(sizeof(int)*199860);
+	int *contii = (int*)malloc(sizeof(int)*199860);
 	for(int i = 1;i < 18;i++){
 		fscanf(tp1,"%s",list1[i]);
 	}
@@ -108,8 +93,7 @@ int main(){
 		score[i] = 0;
 		score[i] = (a1[i]*48-a2[i]*17)*(a1[i]*48-a2[i]*17)+(t1[i]*48-t2[i]*17)*(t1[i]*48-t2[i]*17)+(c1[i]*48-c2[i]*17)*(c1[i]*48-c2[i]*17)+(g1[i]*48-g2[i]*17)*(g1[i]*48-g2[i]*17)+(q1[i]*48-q2[i]*17)*(q1[i]*48-q2[i]*17);
 		place[i] = i+1;
-		//printf("now calculating place %d\n",i);
-	}
+			}
 	for(int i=0;i<199859;i++){
 		fprintf(bupaixu,"%d\t%d\n",place[i],score[i]);
 	}
