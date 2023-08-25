@@ -1,3 +1,7 @@
 # PRVdetection
 
-- add makefile
+- how to build it
+	mkdir build
+	cd build
+	cmake ..
+	make
