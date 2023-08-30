@@ -21,4 +21,12 @@ make
 #### usage
 Tset data were in PRVdetection/test_data
 copy build/PRVdec and test data into workdir
-Run PRVdec
+Run PRVdec:
+```bash
+./PRVdec msafile type1list type2list type1seqnumber type2seqnumber genomelength
+```
+
+for test data:
+```bash
+./PRVdec 1.fa type1 type2 17 48 199813
+'''
