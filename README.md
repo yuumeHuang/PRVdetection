@@ -29,4 +29,4 @@ Run PRVdec:
 for test data:
 ```bash
 ./PRVdec 1.fa type1 type2 17 48 199813
-'''
+```
